@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import vercel from 'vite-plugin-vercel';
 export default defineConfig({
   build: {
-    outDir: 'dist',   // Đặt thư mục đầu ra là 'dist' ở thư mục gốc
+    outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
