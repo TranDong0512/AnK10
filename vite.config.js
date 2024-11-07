@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         category: resolve(__dirname, 'src/category.html'),
-        productDetail: resolve(__dirname, 'src/productDetail.html')
+        product_detail: resolve(__dirname, 'src/product_detail.html')
       }
     }
   },

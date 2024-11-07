@@ -1,4 +1,4 @@
-import { getAll, getById} from "./service.js";
+import { getAll, getById } from "./service.js";
 import { getParams } from "./utils.js";
 
 const searchInput = document.getElementById("search-input");
@@ -20,7 +20,7 @@ const path = document.querySelector(".path");
 function renderpath(data) {
   path.innerHTML = /*html*/ `
         <a href="../index.html" class="text-[#09c] hover:text-[#fcb800] transition-colors">Home</a> /
-        <a href="../pages/category.html?category=${data.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${data.category}</a> /
+        <a href="./category.html?category=${data.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${data.category}</a> /
         <span>${data.title}</span>
 
     `;
@@ -84,16 +84,14 @@ function renderInformartion(data) {
   information.classList.add("col-span-3");
   information.innerHTML = /*html */ `
   <p class="flex items-center mt-5 gap-2"><span class="line-through text-sm">$${(
-    data.price /
-    (1 - data.discountPercentage / 100)
-  ).toFixed(2)}</span>
+      data.price /
+      (1 - data.discountPercentage / 100)
+    ).toFixed(2)}</span>
   <span class="font-semibold text-2xl">$${data.price}</span>
-  <span class="text-sm text-gray-800 font-light">(${
-    data.discountPercentage
-  }%)</span></p>
-  <p class="text-[15px] my-3">Status: <span class="text-green-800 font-semibold">${
-    data.availabilityStatus
-  }</span></p> 
+  <span class="text-sm text-gray-800 font-light">(${data.discountPercentage
+    }%)</span></p>
+  <p class="text-[15px] my-3">Status: <span class="text-green-800 font-semibold">${data.availabilityStatus
+    }</span></p> 
   <hr/>
   <ul class="list-disc list-inside text-[#666666] text-[14px] my-3">
     <li class="py-1">
@@ -111,8 +109,8 @@ function renderInformartion(data) {
   </ul>
   <hr/>
   <p class="text-[15px] my-3">Tags: <span class="text-[#666666]">${data.tags.join(
-    ", "
-  )}</span></p>
+      ", "
+    )}</span></p>
   <form method="#">
   <div class="flex space-x-4 border box-border w-[5.5rem]">
   <button id="minus" class="bg-gray-200 text-gray-700 p-2 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
@@ -135,23 +133,23 @@ function renderInformartion(data) {
   const plusBtn = document.querySelector("#plus")
   const minusBtn = document.querySelector("#minus")
   const quantity = document.querySelector("input[type='tel']")
-  plusBtn.addEventListener("click", ()=>{
+  plusBtn.addEventListener("click", () => {
     event.preventDefault()
     quantity.value++
   })
-  minusBtn.addEventListener("click", ()=>{
+  minusBtn.addEventListener("click", () => {
     event.preventDefault()
     quantity.value--
-    if(quantity.value < 1){
+    if (quantity.value < 1) {
       quantity.value = 1
     }
   })
 }
 
-function renderRating(data){
+function renderRating(data) {
   const numberRating = document.querySelector(".number_rating");
 
-  let content ='';
+  let content = '';
   let star = renderStar(data)
   const barStar = renderBarStar(data);
   content += /* html*/ `  
@@ -166,21 +164,21 @@ function renderRating(data){
   numberRating.innerHTML = content
 }
 
-function renderReviews(data){
+function renderReviews(data) {
   const total = document.querySelector(".total_reviews")
   const reviews = document.querySelector(".user-review")
 
   total.textContent = `Có ${data.reviews.length} lượt đánh giá cho sản phẩm này`
   let content = '';
-  data.reviews.forEach((item)=>{
+  data.reviews.forEach((item) => {
     const date = new Date(item.date);
 
-// Lấy ngày, tháng và năm
-const day = date.getDate(); // Lấy ngày (1-31)
-const month = date.getMonth() + 1; // Lấy tháng (0-11) và cộng thêm 1 để có tháng thực (1-12)
-const year = date.getFullYear(); // Lấy năm
-// Định dạng lại thành "ngày/tháng/năm"
-const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
+    // Lấy ngày, tháng và năm
+    const day = date.getDate(); // Lấy ngày (1-31)
+    const month = date.getMonth() + 1; // Lấy tháng (0-11) và cộng thêm 1 để có tháng thực (1-12)
+    const year = date.getFullYear(); // Lấy năm
+    // Định dạng lại thành "ngày/tháng/năm"
+    const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
     content += /*html */ `
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
         <div>
@@ -202,9 +200,9 @@ const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month 
 async function renderSameProduct(data) {
   const listSameProducts = document.querySelector(".same_products")
   const sameProduct = await getAll(`products/category/${data.category}`)
-  sameProduct.products.slice(0,5).forEach((item) => {
+  sameProduct.products.slice(0, 5).forEach((item) => {
     const alcorElement = document.createElement("a");
-    alcorElement.setAttribute("href", `./product-detail.html?id=${item.id}`);
+    alcorElement.setAttribute("href", `./product_detail.html?id=${item.id}`);
     alcorElement.classList.add("item_sale");
     alcorElement.innerHTML = /*html */ `
             <div class='contain_img'>
@@ -212,16 +210,16 @@ async function renderSameProduct(data) {
             </div>
             <div class='contain_desc'>
                 <h4 class="text-xl font-semibold my-2">${item.title.slice(0, 20)}</h4>
-                <p><span class="line-through text-sm">$${( 
-                  item.price /
-                  (1 - item.discountPercentage / 100)
-                ).toFixed(2)}</span>
+                <p><span class="line-through text-sm">$${(
+        item.price /
+        (1 - item.discountPercentage / 100)
+      ).toFixed(2)}</span>
                 <span class="text-[#f5912c] font-semibold text-xl">$${item.price}</span></p>
             </div>
             
         `;
 
-       listSameProducts.appendChild(alcorElement);
+    listSameProducts.appendChild(alcorElement);
   });
 }
 
@@ -246,7 +244,7 @@ searchInput.addEventListener(
           const resultItem = document.createElement("a");
           resultItem.setAttribute(
             "href",
-            `./product-detail.html?id=${product.id}`
+            `./product_detail.html?id=${product.id}`
           );
           resultItem.className = "result-item flex items-center";
           resultItem.innerHTML = `
@@ -286,7 +284,7 @@ overlay.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
 
-function renderStar(data){
+function renderStar(data) {
   let star = "";
   for (let i = 1; i <= data.rating; i++) {
     star += `<span class="text-[gold] mr-1">★</span>`;
@@ -302,8 +300,8 @@ function renderStar(data){
 }
 
 function renderBarStar(data) {
-  const starCount = [0, 0, 0, 0, 0]; 
-  
+  const starCount = [0, 0, 0, 0, 0];
+
   data.reviews.forEach(item => {
     if (item.rating >= 1 && item.rating <= 5) {
       starCount[item.rating - 1]++;
@@ -325,8 +323,8 @@ function renderBarStar(data) {
     `;
   }
 
-  const content = percentages.map((percentage, index) => renderProgressBar(percentage, index+1)).join('');
-  
+  const content = percentages.map((percentage, index) => renderProgressBar(percentage, index + 1)).join('');
+
   return content;
 }
 
