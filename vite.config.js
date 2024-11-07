@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-
+import vercel from 'vite-plugin-vercel';
 export default defineConfig({
   root: 'src',
   build: {
