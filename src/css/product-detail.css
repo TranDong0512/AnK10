@@ -1,0 +1,60 @@
+/** @format */
+
+@import "tailwind.css";
+#search-results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+#search-results i {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  color: red;
+  font-size: 40px;
+  z-index: 999999;
+}
+.result-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.result-item:hover {
+  background-color: rgba(102, 102, 102, 0.238);
+}
+.result-item img {
+  width: 50px;
+  margin-right: 30px;
+}
+
+/* ==================slide=============== */
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.slick-dots li {
+  list-style: none;
+  width: 10%;
+}
+.slick-dots li img {
+  display: inline-block;
+  border: 1px solid #66666642;
+}
+.slick-dots li img:hover {
+  outline: 1px solid #fcb800;
+}
+/* ==================== input ======================== */
+.item_sale {
+  transition: all 0.3s ease;
+}
+.item_sale:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.item_sale div:last-child {
+  padding-left: 0.5rem;
+}
+.contain_desc {
+  padding-left: 1.5rem !important;
+}

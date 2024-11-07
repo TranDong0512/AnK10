@@ -1,5 +1,5 @@
-import { getAll } from "./service.js";
-import initializeSlider from "./slide.js";
+import { getAll } from "./components/service.js";
+import initializeSlider from "./components/slide.js";
 
 const categoryLeft = document.querySelector(".category-left");
 const categoryRight = document.querySelector(".category-right");
@@ -97,9 +97,9 @@ function renderHotSale(data) {
             <div class='contain_desc'>
                 <h4>${data[index].title.slice(0, 20)}</h4>
                 <p><span>$${(
-                  data[index].price /
-                  (1 - data[index].discountPercentage / 100)
-                ).toFixed(2)}</span>
+        data[index].price /
+        (1 - data[index].discountPercentage / 100)
+      ).toFixed(2)}</span>
                 <span>$${data[index].price}</span></p>
             </div>
             

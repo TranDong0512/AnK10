@@ -1,9 +1,9 @@
 // header.js
 function createHeader() {
-    const header = document.createElement('header');
-    header.className = "container mx-auto grid grid-cols-12 gap-5 py-5 px-10 shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50";
-    
-    header.innerHTML = `
+  const header = document.createElement('header');
+  header.className = "container mx-auto grid grid-cols-12 gap-5 py-5 px-10 shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50";
+
+  header.innerHTML = `
       <div class="logo col-span-3 text-center flex justify-center">
         <a href="#">
           <img class="site-logo" alt="Đồ công nghệ" src="./assests/img/logo-trustmart.png" />
@@ -31,14 +31,13 @@ function createHeader() {
         <button class="bg-[#fff] px-5 py-2 rounded-xl font-semibold transition-colors hover:bg-black hover:text-[#fff]">Login</button>
       </div>
     `;
-  
-    return header;
-  }
-  
-  // Chèn header vào DOM
-  document.addEventListener('DOMContentLoaded', () => {
-    const body = document.body;
-    const headerComponent = createHeader();
-    body.prepend(headerComponent); // Thêm header vào đầu body
-  });
-  
+
+  return header;
+}
+
+// Chèn header vào DOM
+document.addEventListener('DOMContentLoaded', () => {
+  const body = document.body;
+  const headerComponent = createHeader();
+  body.prepend(headerComponent); // Thêm header vào đầu body
+});
