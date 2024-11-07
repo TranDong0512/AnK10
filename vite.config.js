@@ -1,10 +1,9 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import vercel from 'vite-plugin-vercel';
+
 export default defineConfig({
-  root: 'src',
   build: {
-    outDir: '../dist',
+    outDir: 'dist',   // Đặt thư mục đầu ra là 'dist' ở thư mục gốc
     emptyOutDir: true,
     rollupOptions: {
       input: {
@@ -13,6 +12,5 @@ export default defineConfig({
         product_detail: resolve(__dirname, 'src/product_detail.html')
       }
     }
-  },
-  plugins: [vercel()],
+  }
 });
