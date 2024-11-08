@@ -87,7 +87,7 @@ function renderHotSale(data) {
     const alcorElement = document.createElement("a");
     alcorElement.setAttribute(
       "href",
-      `./product_detail.html?id=${data[index].id}`
+      `./product-detail.html?id=${data[index].id}`
     );
     alcorElement.classList.add("item_sale");
     alcorElement.innerHTML = /*html */ `
@@ -120,7 +120,7 @@ function renderHotItem(page, data) {
     const alcorElement = document.createElement("a");
     alcorElement.setAttribute(
       "href",
-      `./product_detail.html?id=${product.id}`
+      `./product-detail.html?id=${product.id}`
     );
     alcorElement.innerHTML = /*html */ `
         <div class='contain_img'>
@@ -182,7 +182,7 @@ searchInput.addEventListener(
           const resultItem = document.createElement("a");
           resultItem.setAttribute(
             "href",
-            `./product_detail.html?id=${product.id}`
+            `./product-detail.html?id=${product.id}`
           );
           resultItem.className = "result-item flex items-center";
           resultItem.innerHTML = `
@@ -229,7 +229,7 @@ async function renderClothes(data, dataSugget, fquery, squery) {
     const divElement = document.createElement("a");
     divElement.setAttribute(
       "href",
-      `./product_detail.html?id=${item.id}`
+      `./product-detail.html?id=${item.id}`
     );
     divElement.classList.add("clothes_item");
     for (let i = 1; i <= item.rating; i++) {
@@ -256,7 +256,7 @@ async function renderClothes(data, dataSugget, fquery, squery) {
     const divElement2 = document.createElement("a");
     divElement2.setAttribute(
       "href",
-      `./product_detail.html?id=${item.id}`
+      `./product-detail.html?id=${item.id}`
     );
     divElement2.classList.add("flex", "cursor-pointer", "contain-sug");
     divElement2.innerHTML = `

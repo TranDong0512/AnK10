@@ -202,7 +202,7 @@ async function renderSameProduct(data) {
   const sameProduct = await getAll(`products/category/${data.category}`)
   sameProduct.products.slice(0, 5).forEach((item) => {
     const alcorElement = document.createElement("a");
-    alcorElement.setAttribute("href", `./product_detail.html?id=${item.id}`);
+    alcorElement.setAttribute("href", `./product-detail.html?id=${item.id}`);
     alcorElement.classList.add("item_sale");
     alcorElement.innerHTML = /*html */ `
             <div class='contain_img'>
@@ -244,7 +244,7 @@ searchInput.addEventListener(
           const resultItem = document.createElement("a");
           resultItem.setAttribute(
             "href",
-            `./product_detail.html?id=${product.id}`
+            `./product-detail.html?id=${product.id}`
           );
           resultItem.className = "result-item flex items-center";
           resultItem.innerHTML = `

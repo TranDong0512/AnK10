@@ -72,7 +72,7 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
           <p>${t.comment}</p>
         </div>
       </div>
-    `}),n.innerHTML=s}async function T(e){const i=document.querySelector(".same_products");(await v(`products/category/${e.category}`)).products.slice(0,5).forEach(s=>{const t=document.createElement("a");t.setAttribute("href",`./product_detail.html?id=${s.id}`),t.classList.add("item_sale"),t.innerHTML=`
+    `}),n.innerHTML=s}async function T(e){const i=document.querySelector(".same_products");(await v(`products/category/${e.category}`)).products.slice(0,5).forEach(s=>{const t=document.createElement("a");t.setAttribute("href",`./product-detail.html?id=${s.id}`),t.classList.add("item_sale"),t.innerHTML=`
             <div class='contain_img'>
                 <img src="${s.thumbnail}"/>
             </div>
@@ -82,7 +82,7 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
                 <span class="text-[#f5912c] font-semibold text-xl">$${s.price}</span></p>
             </div>
             
-        `,i.appendChild(t)})}f.addEventListener("input",q(async()=>{const e=f.value.toLowerCase();c.classList.remove("hidden"),p.classList.remove("hidden");const n=(await v("products")).products;if(c.innerHTML="",e){const s=n.filter(t=>t.title.toLowerCase().includes(e));if(s.length>0)s.forEach(t=>{const l=document.createElement("a");l.setAttribute("href",`./product_detail.html?id=${t.id}`),l.className="result-item flex items-center",l.innerHTML=`
+        `,i.appendChild(t)})}f.addEventListener("input",q(async()=>{const e=f.value.toLowerCase();c.classList.remove("hidden"),p.classList.remove("hidden");const n=(await v("products")).products;if(c.innerHTML="",e){const s=n.filter(t=>t.title.toLowerCase().includes(e));if(s.length>0)s.forEach(t=>{const l=document.createElement("a");l.setAttribute("href",`./product-detail.html?id=${t.id}`),l.className="result-item flex items-center",l.innerHTML=`
             <img src="${t.thumbnail}" alt="${t.title}"/>
             <span>${t.title}</span>
           `,c.appendChild(l)});else{const t=document.createElement("div");t.className="text-center p-4",t.style.paddingBlock="10px",t.innerHTML="<span>Không có kết quả</span>",c.appendChild(t)}}else p.classList.add("hidden")},300));function q(e,i){let n;return function(...s){n&&clearTimeout(n),n=setTimeout(()=>{e.apply(this,s)},i)}}p.addEventListener("click",()=>{f.value="",c.innerHTML="",p.classList.add("hidden")});function h(e){let i="";for(let n=1;n<=e.rating;n++)i+='<span class="text-[gold] mr-1">★</span>';if(e.rating<5){const n=5-Math.floor(e.rating);for(let s=1;s<=n;s++)i+='<span class="text-gray-400 mr-1">★</span>'}return i}function M(e){const i=[0,0,0,0,0];e.reviews.forEach(r=>{r.rating>=1&&r.rating<=5&&i[r.rating-1]++});const n=e.reviews.length,s=i.map(r=>(r/n*100).toFixed(2));function t(r,o){return`
