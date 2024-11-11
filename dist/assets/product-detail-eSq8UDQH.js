@@ -62,7 +62,7 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
   `,i.innerHTML=n}function E(e){const i=document.querySelector(".total_reviews"),n=document.querySelector(".user-review");i.textContent=`Có ${e.reviews.length} lượt đánh giá cho sản phẩm này`;let s="";e.reviews.forEach(t=>{const l=new Date(t.date),r=l.getDate(),o=l.getMonth()+1,m=l.getFullYear(),g=`${r<10?"0"+r:r}/${o<10?"0"+o:o}/${m}`;s+=`
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
         <div>
-        <img src="../assests/img/user.png" class="w-16 bg-white rounded-full object-cover"/>
+        <img src="../assests/img/avt-user.png" class="w-16 bg-white rounded-full object-cover"/>
         </div>
         <div>
           <p>${h(t)}</p>
