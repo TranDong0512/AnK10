@@ -1,9 +1,8 @@
 import { getAll, getById } from "./service.js";
 import { getParams } from "./utils.js";
-
+import avatar from '../public/assets/avt.jpg'
 const searchInput = document.getElementById("search-input");
 const searchResults = document.getElementById("search-results");
-const titleProduct = document.querySelector(".title_product");
 
 const overlay = document.getElementById("overlay");
 const path = document.querySelector(".path");
@@ -182,7 +181,7 @@ function renderReviews(data) {
     content += /*html */ `
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
         <div>
-        <img src="E:\test\project-js-k10\public\assets\avt.jpg" class="w-16 bg-white rounded-full object-cover" alt= 'avatar user'/>
+        <img src=${avatar}class="w-16 bg-white rounded-full object-cover" alt= 'avatar user'/>
         </div>
         <div>
           <p>${renderStar(item)}</p>

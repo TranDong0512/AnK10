@@ -1,9 +1,9 @@
-import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service-CGqyXxcI.js";import{g as y}from"./utils-D9frBmc6.js";const f=document.getElementById("search-input"),c=document.getElementById("search-results");document.querySelector(".title_product");const p=document.getElementById("overlay"),b=document.querySelector(".path");(async()=>{const e=await x("products",y("id"));w(e),L(e),S(e),E(e),T(e)})();function w(e){b.innerHTML=`
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service-CGqyXxcI.js";import{g as y}from"./utils-D9frBmc6.js";const b="/assets/avt-Brj9K7K-.jpg",f=document.getElementById("search-input"),o=document.getElementById("search-results"),p=document.getElementById("overlay"),w=document.querySelector(".path");(async()=>{const e=await x("products",y("id"));L(e),S(e),E(e),T(e),q(e)})();function L(e){w.innerHTML=`
         <a href="../index.html" class="text-[#09c] hover:text-[#fcb800] transition-colors">Home</a> /
         <a href="./category.html?category=${e.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${e.category}</a> /
         <span>${e.title}</span>
 
-    `}function L(e){const i=document.querySelector(".main"),n=document.querySelector(".title_product");let s=h(e);for(n.innerHTML=`
+    `}function S(e){const i=document.querySelector(".main"),n=document.querySelector(".title_product");let s=h(e);for(n.innerHTML=`
     <h1 class="text-2xl mb-1">${e.title}</h1>
     <div class="flex items-center">
       <span class="text-sm">${s}</span>
@@ -13,7 +13,7 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
     </div>
   `;e.images.length<3;)e.images.push("https://placehold.co/300");let t=document.createElement("div");t.classList.add("my-slider","col-span-2");let l="";e.images.forEach(d=>{l+=`
       <div><img src="${d}" class="w-full transition-transform hover:scale-110" alt="Slide 1"></div>
-    `}),t.innerHTML=l,i.appendChild(t),$(".my-slider").slick({dots:!0,arrows:!1,customPaging:function(d,u){return'<img src="'+e.images[u]+'" alt="Slide '+(u+1)+'" />'},speed:500,slidesToShow:1,slidesToScroll:1});let r=document.querySelectorAll(".slick-dots li img");r[0].style.outline="1px solid #fcb800",r.forEach(d=>{d.addEventListener("click",function(){r.forEach(u=>u.style.outline="1px solid #66666642"),this.style.outline="1px solid #fcb800"})});const o=document.createElement("div");o.classList.add("col-span-3"),o.innerHTML=`
+    `}),t.innerHTML=l,i.appendChild(t),$(".my-slider").slick({dots:!0,arrows:!1,customPaging:function(d,u){return'<img src="'+e.images[u]+'" alt="Slide '+(u+1)+'" />'},speed:500,slidesToShow:1,slidesToScroll:1});let r=document.querySelectorAll(".slick-dots li img");r[0].style.outline="1px solid #fcb800",r.forEach(d=>{d.addEventListener("click",function(){r.forEach(u=>u.style.outline="1px solid #66666642"),this.style.outline="1px solid #fcb800"})});const a=document.createElement("div");a.classList.add("col-span-3"),a.innerHTML=`
   <p class="flex items-center mt-5 gap-2"><span class="line-through text-sm">$${(e.price/(1-e.discountPercentage/100)).toFixed(2)}</span>
   <span class="font-semibold text-2xl">$${e.price}</span>
   <span class="text-sm text-gray-800 font-light">(${e.discountPercentage}%)</span></p>
@@ -51,7 +51,7 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
   <input type="submit" class="w-1/3 border rounded-md py-2 px-5 font-semibold bg-[#fcb800] cursor-pointer hover:opacity-80" value="Mua ngay"/>
   </div>
   </form>
-  `,i.appendChild(o);const m=document.querySelector("#plus"),g=document.querySelector("#minus"),a=document.querySelector("input[type='tel']");m.addEventListener("click",()=>{event.preventDefault(),a.value++}),g.addEventListener("click",()=>{event.preventDefault(),a.value--,a.value<1&&(a.value=1)})}function S(e){const i=document.querySelector(".number_rating");let n="",s=h(e);const t=M(e);n+=`  
+  `,i.appendChild(a);const m=document.querySelector("#plus"),g=document.querySelector("#minus"),c=document.querySelector("input[type='tel']");m.addEventListener("click",()=>{event.preventDefault(),c.value++}),g.addEventListener("click",()=>{event.preventDefault(),c.value--,c.value<1&&(c.value=1)})}function E(e){const i=document.querySelector(".number_rating");let n="",s=h(e);const t=H(e);n+=`  
     <h5 class="text-xl">Average Rating</h5>
     <p class="text-[#669900] text-6xl my-3">${e.rating}</p>
     <span class="text-2xl">${s}</span>
@@ -59,10 +59,10 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
     <div class="max-w-full">
       ${t}
     </div>
-  `,i.innerHTML=n}function E(e){const i=document.querySelector(".total_reviews"),n=document.querySelector(".user-review");i.textContent=`Có ${e.reviews.length} lượt đánh giá cho sản phẩm này`;let s="";e.reviews.forEach(t=>{const l=new Date(t.date),r=l.getDate(),o=l.getMonth()+1,m=l.getFullYear(),g=`${r<10?"0"+r:r}/${o<10?"0"+o:o}/${m}`;s+=`
+  `,i.innerHTML=n}function T(e){const i=document.querySelector(".total_reviews"),n=document.querySelector(".user-review");i.textContent=`Có ${e.reviews.length} lượt đánh giá cho sản phẩm này`;let s="";e.reviews.forEach(t=>{const l=new Date(t.date),r=l.getDate(),a=l.getMonth()+1,m=l.getFullYear(),g=`${r<10?"0"+r:r}/${a<10?"0"+a:a}/${m}`;s+=`
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
         <div>
-        <img src="E:	estproject-js-k10publicassetsavt.jpg" class="w-16 bg-white rounded-full object-cover" alt= 'avatar user'/>
+        <img src=${b}class="w-16 bg-white rounded-full object-cover" alt= 'avatar user'/>
         </div>
         <div>
           <p>${h(t)}</p>
@@ -72,7 +72,7 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
           <p>${t.comment}</p>
         </div>
       </div>
-    `}),n.innerHTML=s}async function T(e){const i=document.querySelector(".same_products");(await v(`products/category/${e.category}`)).products.slice(0,5).forEach(s=>{const t=document.createElement("a");t.setAttribute("href",`./product-detail.html?id=${s.id}`),t.classList.add("item_sale"),t.innerHTML=`
+    `}),n.innerHTML=s}async function q(e){const i=document.querySelector(".same_products");(await v(`products/category/${e.category}`)).products.slice(0,5).forEach(s=>{const t=document.createElement("a");t.setAttribute("href",`./product-detail.html?id=${s.id}`),t.classList.add("item_sale"),t.innerHTML=`
             <div class='contain_img'>
                 <img src="${s.thumbnail}"/>
             </div>
@@ -82,14 +82,14 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
                 <span class="text-[#f5912c] font-semibold text-xl">$${s.price}</span></p>
             </div>
             
-        `,i.appendChild(t)})}f.addEventListener("input",q(async()=>{const e=f.value.toLowerCase();c.classList.remove("hidden"),p.classList.remove("hidden");const n=(await v("products")).products;if(c.innerHTML="",e){const s=n.filter(t=>t.title.toLowerCase().includes(e));if(s.length>0)s.forEach(t=>{const l=document.createElement("a");l.setAttribute("href",`./product-detail.html?id=${t.id}`),l.className="result-item flex items-center",l.innerHTML=`
+        `,i.appendChild(t)})}f.addEventListener("input",M(async()=>{const e=f.value.toLowerCase();o.classList.remove("hidden"),p.classList.remove("hidden");const n=(await v("products")).products;if(o.innerHTML="",e){const s=n.filter(t=>t.title.toLowerCase().includes(e));if(s.length>0)s.forEach(t=>{const l=document.createElement("a");l.setAttribute("href",`./product-detail.html?id=${t.id}`),l.className="result-item flex items-center",l.innerHTML=`
             <img src="${t.thumbnail}" alt="${t.title}"/>
             <span>${t.title}</span>
-          `,c.appendChild(l)});else{const t=document.createElement("div");t.className="text-center p-4",t.style.paddingBlock="10px",t.innerHTML="<span>Không có kết quả</span>",c.appendChild(t)}}else p.classList.add("hidden")},300));function q(e,i){let n;return function(...s){n&&clearTimeout(n),n=setTimeout(()=>{e.apply(this,s)},i)}}p.addEventListener("click",()=>{f.value="",c.innerHTML="",p.classList.add("hidden")});function h(e){let i="";for(let n=1;n<=e.rating;n++)i+='<span class="text-[gold] mr-1">★</span>';if(e.rating<5){const n=5-Math.floor(e.rating);for(let s=1;s<=n;s++)i+='<span class="text-gray-400 mr-1">★</span>'}return i}function M(e){const i=[0,0,0,0,0];e.reviews.forEach(r=>{r.rating>=1&&r.rating<=5&&i[r.rating-1]++});const n=e.reviews.length,s=i.map(r=>(r/n*100).toFixed(2));function t(r,o){return`
-      <div class="flex items-center gap-4 text-[#666666] text-sm my-2">${o} Star
+          `,o.appendChild(l)});else{const t=document.createElement("div");t.className="text-center p-4",t.style.paddingBlock="10px",t.innerHTML="<span>Không có kết quả</span>",o.appendChild(t)}}else p.classList.add("hidden")},300));function M(e,i){let n;return function(...s){n&&clearTimeout(n),n=setTimeout(()=>{e.apply(this,s)},i)}}p.addEventListener("click",()=>{f.value="",o.innerHTML="",p.classList.add("hidden")});function h(e){let i="";for(let n=1;n<=e.rating;n++)i+='<span class="text-[gold] mr-1">★</span>';if(e.rating<5){const n=5-Math.floor(e.rating);for(let s=1;s<=n;s++)i+='<span class="text-gray-400 mr-1">★</span>'}return i}function H(e){const i=[0,0,0,0,0];e.reviews.forEach(r=>{r.rating>=1&&r.rating<=5&&i[r.rating-1]++});const n=e.reviews.length,s=i.map(r=>(r/n*100).toFixed(2));function t(r,a){return`
+      <div class="flex items-center gap-4 text-[#666666] text-sm my-2">${a} Star
         <div class="w-1/3 h-2 bg-[#f1f1f1] relative rounded-md">
           <span class="absolute top-0 inline-block h-2 bg-green-500 rounded-md" style="width: ${r}%;"></span>
         </div>
         ${r}%
       </div>
-    `}return s.map((r,o)=>t(r,o+1)).join("")}
+    `}return s.map((r,a)=>t(r,a+1)).join("")}
