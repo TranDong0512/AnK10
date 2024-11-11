@@ -172,7 +172,7 @@ function renderReviews(data) {
   data.reviews.forEach((item) => {
     const date = new Date(item.date);
 
-    // Lấy ngày, tháng và năm
+    // Lấy ngày, tháng và năm 
     const day = date.getDate(); // Lấy ngày (1-31)
     const month = date.getMonth() + 1; // Lấy tháng (0-11) và cộng thêm 1 để có tháng thực (1-12)
     const year = date.getFullYear(); // Lấy năm
@@ -181,7 +181,7 @@ function renderReviews(data) {
     content += /*html */ `
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
         <div>
-        <img src=${avatar}class="w-16 bg-white rounded-full object-cover" alt= 'avatar user'/>
+        <img src='${avatar}'class="w-16 bg-white rounded-full object-cover" alt= 'avatar user'/>
         </div>
         <div>
           <p>${renderStar(item)}</p>
