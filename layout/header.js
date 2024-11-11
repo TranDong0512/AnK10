@@ -6,7 +6,7 @@ function createHeader() {
   header.innerHTML = `
       <div class="logo col-span-3 text-center flex justify-center">
         <a href="#">
-          <img class="site-logo" alt="Đồ công nghệ" src="./assests/img/logo-trustmart.png" />
+          <img class="site-logo" alt="Đồ công nghệ" src="../public/assets/logo-trustmart.png" />
         </a>
       </div>
       <div class="search col-span-5 flex items-center">

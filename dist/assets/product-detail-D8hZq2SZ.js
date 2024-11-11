@@ -1,4 +1,4 @@
-import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service-CGqyXxcI.js";import{g as y}from"./utils-D9frBmc6.js";const f=document.getElementById("search-input"),a=document.getElementById("search-results");document.querySelector(".title_product");const p=document.getElementById("overlay"),b=document.querySelector(".path");(async()=>{const e=await x("products",y("id"));w(e),L(e),S(e),E(e),T(e)})();function w(e){b.innerHTML=`
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service-CGqyXxcI.js";import{g as y}from"./utils-D9frBmc6.js";const f=document.getElementById("search-input"),c=document.getElementById("search-results");document.querySelector(".title_product");const p=document.getElementById("overlay"),b=document.querySelector(".path");(async()=>{const e=await x("products",y("id"));w(e),L(e),S(e),E(e),T(e)})();function w(e){b.innerHTML=`
         <a href="../index.html" class="text-[#09c] hover:text-[#fcb800] transition-colors">Home</a> /
         <a href="./category.html?category=${e.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${e.category}</a> /
         <span>${e.title}</span>
@@ -51,7 +51,7 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
   <input type="submit" class="w-1/3 border rounded-md py-2 px-5 font-semibold bg-[#fcb800] cursor-pointer hover:opacity-80" value="Mua ngay"/>
   </div>
   </form>
-  `,i.appendChild(o);const m=document.querySelector("#plus"),g=document.querySelector("#minus"),c=document.querySelector("input[type='tel']");m.addEventListener("click",()=>{event.preventDefault(),c.value++}),g.addEventListener("click",()=>{event.preventDefault(),c.value--,c.value<1&&(c.value=1)})}function S(e){const i=document.querySelector(".number_rating");let n="",s=h(e);const t=M(e);n+=`  
+  `,i.appendChild(o);const m=document.querySelector("#plus"),g=document.querySelector("#minus"),a=document.querySelector("input[type='tel']");m.addEventListener("click",()=>{event.preventDefault(),a.value++}),g.addEventListener("click",()=>{event.preventDefault(),a.value--,a.value<1&&(a.value=1)})}function S(e){const i=document.querySelector(".number_rating");let n="",s=h(e);const t=M(e);n+=`  
     <h5 class="text-xl">Average Rating</h5>
     <p class="text-[#669900] text-6xl my-3">${e.rating}</p>
     <span class="text-2xl">${s}</span>
@@ -62,7 +62,7 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
   `,i.innerHTML=n}function E(e){const i=document.querySelector(".total_reviews"),n=document.querySelector(".user-review");i.textContent=`Có ${e.reviews.length} lượt đánh giá cho sản phẩm này`;let s="";e.reviews.forEach(t=>{const l=new Date(t.date),r=l.getDate(),o=l.getMonth()+1,m=l.getFullYear(),g=`${r<10?"0"+r:r}/${o<10?"0"+o:o}/${m}`;s+=`
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
         <div>
-        <img src="../public/assets/avt-user.png" class="w-16 bg-white rounded-full object-cover" alt= 'avatar user'/>
+        <img src="" class="w-16 bg-white rounded-full object-cover" alt= 'avatar user'/>
         </div>
         <div>
           <p>${h(t)}</p>
@@ -82,10 +82,10 @@ import"./modulepreload-polyfill-B5Qt9EMX.js";import{a as x,g as v}from"./service
                 <span class="text-[#f5912c] font-semibold text-xl">$${s.price}</span></p>
             </div>
             
-        `,i.appendChild(t)})}f.addEventListener("input",q(async()=>{const e=f.value.toLowerCase();a.classList.remove("hidden"),p.classList.remove("hidden");const n=(await v("products")).products;if(a.innerHTML="",e){const s=n.filter(t=>t.title.toLowerCase().includes(e));if(s.length>0)s.forEach(t=>{const l=document.createElement("a");l.setAttribute("href",`./product-detail.html?id=${t.id}`),l.className="result-item flex items-center",l.innerHTML=`
+        `,i.appendChild(t)})}f.addEventListener("input",q(async()=>{const e=f.value.toLowerCase();c.classList.remove("hidden"),p.classList.remove("hidden");const n=(await v("products")).products;if(c.innerHTML="",e){const s=n.filter(t=>t.title.toLowerCase().includes(e));if(s.length>0)s.forEach(t=>{const l=document.createElement("a");l.setAttribute("href",`./product-detail.html?id=${t.id}`),l.className="result-item flex items-center",l.innerHTML=`
             <img src="${t.thumbnail}" alt="${t.title}"/>
             <span>${t.title}</span>
-          `,a.appendChild(l)});else{const t=document.createElement("div");t.className="text-center p-4",t.style.paddingBlock="10px",t.innerHTML="<span>Không có kết quả</span>",a.appendChild(t)}}else p.classList.add("hidden")},300));function q(e,i){let n;return function(...s){n&&clearTimeout(n),n=setTimeout(()=>{e.apply(this,s)},i)}}p.addEventListener("click",()=>{f.value="",a.innerHTML="",p.classList.add("hidden")});function h(e){let i="";for(let n=1;n<=e.rating;n++)i+='<span class="text-[gold] mr-1">★</span>';if(e.rating<5){const n=5-Math.floor(e.rating);for(let s=1;s<=n;s++)i+='<span class="text-gray-400 mr-1">★</span>'}return i}function M(e){const i=[0,0,0,0,0];e.reviews.forEach(r=>{r.rating>=1&&r.rating<=5&&i[r.rating-1]++});const n=e.reviews.length,s=i.map(r=>(r/n*100).toFixed(2));function t(r,o){return`
+          `,c.appendChild(l)});else{const t=document.createElement("div");t.className="text-center p-4",t.style.paddingBlock="10px",t.innerHTML="<span>Không có kết quả</span>",c.appendChild(t)}}else p.classList.add("hidden")},300));function q(e,i){let n;return function(...s){n&&clearTimeout(n),n=setTimeout(()=>{e.apply(this,s)},i)}}p.addEventListener("click",()=>{f.value="",c.innerHTML="",p.classList.add("hidden")});function h(e){let i="";for(let n=1;n<=e.rating;n++)i+='<span class="text-[gold] mr-1">★</span>';if(e.rating<5){const n=5-Math.floor(e.rating);for(let s=1;s<=n;s++)i+='<span class="text-gray-400 mr-1">★</span>'}return i}function M(e){const i=[0,0,0,0,0];e.reviews.forEach(r=>{r.rating>=1&&r.rating<=5&&i[r.rating-1]++});const n=e.reviews.length,s=i.map(r=>(r/n*100).toFixed(2));function t(r,o){return`
       <div class="flex items-center gap-4 text-[#666666] text-sm my-2">${o} Star
         <div class="w-1/3 h-2 bg-[#f1f1f1] relative rounded-md">
           <span class="absolute top-0 inline-block h-2 bg-green-500 rounded-md" style="width: ${r}%;"></span>
